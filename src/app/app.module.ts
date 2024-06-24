@@ -13,7 +13,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     HomeComponent,
     CatalogComponent,
     SiteHeaderComponent,
-    ProductDetailsComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule

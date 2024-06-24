@@ -1,27 +1,18 @@
 <div class="product">
   <div class="product-details">
-    <img [src]="getImageUrl(product)" [alt]="product?.name" />
+    <img [src]="getImageUrl(product)" [alt]="product.name" />
     <div class="product-info">
-      <div class="name">{{ product?.name }}</div>
-      <!-- '?' -> safe navigation operator (safes from null elements) -->
-      <div class="description">{{ product?.description }}</div>
-      <div class="category">Part Type: {{ product?.category }}</div>
+      <div class="name">{{ product.name }}</div>
+      <div class="description">{{ product.description }}</div>
+      <div class="category">Part Type: {{ product.category }}</div>
     </div>
   </div>
   <div class="price">
-    <div
-      [ngStyle]="{ color: product.discount > 0 ? 'green' : '' }"
-      [ngClass]="getDiscountedClass(product)"
-    >
-      <!-- style binding - [ngStyle=""] -->
-      <!-- class binding - [ngClass=""] -->
-      {{ product?.price | currency }}
+    <div [ngClass]="{ strikethrough: product.discount > 0 }">
+      {{ product.price | currency : "USD" }}
     </div>
-    <div class="discount" *ngIf="product.discount > 0">
-      <!-- show and hide content using *ngIf(if statement) -->
-      {{ product.price * (1 - product.discount) | currency }}
-      <!-- Formatting data using Angular pipe "|" -->
-      <!-- currency - to display in currency -->
+    <div *ngIf="product.discount > 0" class="discount">
+      {{ product.price * (1 - product.discount) | currency : "USD" }}
     </div>
     <button class="cta" (click)="buyButtonClicked(product)">Buy</button>
   </div>

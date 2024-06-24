@@ -8,12 +8,11 @@
   </div>
 
   <ul class="products">
-    <li class="product-item" *ngFor="let product of getFilteredProduct()">
-      <app-product-details
+    <li class="product-item" *ngFor="let product of getFilteredProducts()">
+      <bot-product-details
         [product]="product"
         (buy)="addToCart(product)"
-      ></app-product-details>
-      <!-- communicationg with child components : product-details -->
+      ></bot-product-details>
     </li>
   </ul>
 </div>

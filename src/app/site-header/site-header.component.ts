@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-site-header',
+  selector: 'bot-site-header',
   templateUrl: './site-header.component.html',
-  styleUrls: ['./site-header.component.css']
+  styleUrls: ['./site-header.component.css'],
 })
 export class SiteHeaderComponent {
-
-  constructor() { }
-
+  constructor() {}
 }
